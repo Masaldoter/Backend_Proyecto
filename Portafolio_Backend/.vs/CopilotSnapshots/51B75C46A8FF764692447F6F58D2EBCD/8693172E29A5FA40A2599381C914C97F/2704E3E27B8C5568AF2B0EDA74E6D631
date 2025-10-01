@@ -1,0 +1,12 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=proyecto_portafolio;TrustServerCertificate=true;User Id=fzepeda;Password=admin;MultipleActiveResultSets=true"
+  }
+}

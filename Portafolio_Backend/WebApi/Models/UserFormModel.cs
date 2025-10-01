@@ -1,0 +1,13 @@
+using Microsoft.AspNetCore.Http;
+
+namespace WebApi.Models
+{
+    public class UserFormModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Bio { get; set; }
+        public IFormFile ProfileImage { get; set; }
+    }
+}

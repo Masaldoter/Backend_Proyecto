@@ -1,0 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Portafolio_Backend.Data;
+
+namespace Portafolio_Backend
+{
+    public class Class1
+    {
+
+    }
+}

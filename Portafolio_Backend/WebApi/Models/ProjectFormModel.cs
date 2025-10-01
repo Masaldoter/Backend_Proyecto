@@ -1,0 +1,16 @@
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+
+namespace WebApi.Models
+{
+    public class ProjectFormModel
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string[] Technologies { get; set; }
+        public string ProjectUrl { get; set; }
+        public int UserId { get; set; }
+        public IFormFile Image { get; set; } // Imagen principal
+        public List<IFormFile> Images { get; set; } // Imágenes adicionales
+    }
+}

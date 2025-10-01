@@ -1,0 +1,90 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using AccesoDatos.Models;
+using AccesoDatos.Data;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
+
+namespace WebApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProjectsController : ControllerBase
+    {
+        private readonly AccesoDatosDbContext _context;
+        private readonly IWebHostEnvironment _env;
+        public ProjectsController(AccesoDatosDbContext context, IWebHostEnvironment env)
+        {
+            _context = context;
+            _env = env;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
+            => await _context.Projects.Include(p => p.User).ToListAsync();
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Project>> GetProject(int id)
+        {
+            var project = await _context.Projects.Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id);
+            if (project == null) return NotFound();
+            return project;
+        }
+
+        // Nuevo endpoint para subir imagen de proyecto y crear proyecto
+        [HttpPost("with-image")]
+        public async Task<ActionResult<Project>> PostProjectWithImage([FromForm] ProjectFormModel model)
+        {
+            string imagePath = null;
+            if (model.Image != null && model.Image.Length > 0)
+            {
+                var imagesFolder = Path.Combine(_env.WebRootPath, "images");
+                Directory.CreateDirectory(imagesFolder);
+                var fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(imagesFolder, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+                imagePath = $"images/{fileName}";
+            }
+            var project = new Project {
+                Title = model.Title,
+                Description = model.Description,
+                Technologies = model.Technologies,
+                ProjectUrl = model.ProjectUrl,
+                UserId = model.UserId,
+                ImageUrl = imagePath
+            };
+            _context.Projects.Add(project);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, project);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Project>> PostProject(Project project)
+        {
+            _context.Projects.Add(project);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, project);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProject(int id, Project project)
+        {
+            if (id != project.Id) return BadRequest();
+            _context.Entry(project).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProject(int id)
+        {
+            var project = await _context.Projects.FindAsync(id);
+            if (project == null) return NotFound();
+            _context.Projects.Remove(project);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+    }
+}

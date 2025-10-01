@@ -1,0 +1,38 @@
+﻿using Portafolio_Backend.Models;
+using Portafolio_Backend.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Portafolio_Backend.DAO
+{
+    public class PointDao
+    {
+        private readonly PortfolioDbContext _context;
+
+        public PointDao(PortfolioDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<Point>> GetAllAsync() => await _context.Points.Include(p => p.Project).ToListAsync();
+        public async Task<Point?> GetByIdAsync(int id) => await _context.Points.Include(p => p.Project).FirstOrDefaultAsync(p => p.Id == id);
+        public async Task AddAsync(Point point)
+        {
+            _context.Points.Add(point);
+            await _context.SaveChangesAsync();
+        }
+        public async Task UpdateAsync(Point point)
+        {
+            _context.Points.Update(point);
+            await _context.SaveChangesAsync();
+        }
+        public async Task DeleteAsync(int id)
+        {
+            var point = await _context.Points.FindAsync(id);
+            if (point != null)
+            {
+                _context.Points.Remove(point);
+                await _context.SaveChangesAsync();
+            }
+        }
+    }
+}

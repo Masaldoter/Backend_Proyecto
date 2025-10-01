@@ -1,0 +1,11 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Portafolio_Backend.Data;
+
+namespace Portafolio_Backend
+{
+    public class Class1
+    {
+        // Aquí puedes agregar lógica de inicialización o pruebas si lo deseas
+        // Por ahora, las entidades y el DbContext ya están listos para migraciones y CRUD
+    }
+}

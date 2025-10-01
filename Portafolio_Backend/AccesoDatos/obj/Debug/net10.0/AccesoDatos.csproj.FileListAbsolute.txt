@@ -1,0 +1,15 @@
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.csproj.AssemblyReference.cache
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.AssemblyInfoInputs.cache
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.AssemblyInfo.cs
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.csproj.CoreCompileInputs.cache
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.sourcelink.json
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\bin\Debug\net10.0\AccesoDatos.deps.json
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\bin\Debug\net10.0\AccesoDatos.runtimeconfig.json
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\bin\Debug\net10.0\AccesoDatos.dll
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\bin\Debug\net10.0\AccesoDatos.pdb
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.dll
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\refint\AccesoDatos.dll
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.pdb
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\AccesoDatos.genruntimeconfig.cache
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\AccesoDatos\obj\Debug\net10.0\ref\AccesoDatos.dll

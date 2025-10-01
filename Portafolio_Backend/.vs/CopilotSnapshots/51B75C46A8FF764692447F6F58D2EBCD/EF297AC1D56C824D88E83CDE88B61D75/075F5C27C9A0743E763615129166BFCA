@@ -1,0 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Portafolio_Backend.Data;
+
+namespace Portafolio_Backend
+{
+    public class Class1
+    {
+        // Aquí puedes agregar lógica de inicialización o pruebas si lo deseas
+        // Por ahora, las entidades y el DbContext ya están listos para migraciones y CRUD
+
+        // En tu Program.cs o Startup.cs, deberás agregar la configuración para SQL Server, por ejemplo:
+        // services.AddDbContext<PortfolioDbContext>(options =>
+        //     options.UseSqlServer("Server=TU_SERVIDOR;Database=PortfolioDB;Trusted_Connection=True;TrustServerCertificate=True;"));
+    }
+}

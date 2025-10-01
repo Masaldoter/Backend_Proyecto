@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AccesoDatos/AccesoDatos.csproj" Id="86d86c87-25b2-4d88-aa1d-211bbc7d6937" />
+  <Project Path="WebApi/WebApi.csproj" Id="a776ac75-e897-4a0e-a367-b31b9fafd40e" />
+</Solution>
