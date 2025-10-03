@@ -42,8 +42,7 @@
               "RelativeToolTip": "AccesoDatos\\DAO\\UserDao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T23:21:05.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T23:21:05.691Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "WebApi\\Models\\UserFormModel.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAjwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T22:26:01.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T22:26:01.571Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "AccesoDatos\\Models\\User.cs",
               "ViewState": "AgIAADAAAAAAAAAAAIAywD4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T22:23:10.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T22:23:10.888Z"
             }
           ]
         }
