@@ -1,0 +1,21 @@
+﻿namespace AccesoDatos.Models
+{
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Bio { get; set; }
+        public string ShortDescription { get; set; } // Frase breve
+        public string ProfileImageUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string GitHubUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; }
+        public int YearsOfExperience { get; set; }
+        public string ExperienceLevel { get; set; }
+        public string[] Skills { get; set; }
+    }
+}

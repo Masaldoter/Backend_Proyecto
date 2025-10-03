@@ -10,6 +10,7 @@ namespace WebApi.Models
         public string[] Technologies { get; set; }
         public string ProjectUrl { get; set; }
         public int UserId { get; set; }
+        public bool IsFeatured { get; set; } // Nuevo campo
         public IFormFile Image { get; set; } // Imagen principal
         public List<IFormFile> Images { get; set; } // Imágenes adicionales
     }

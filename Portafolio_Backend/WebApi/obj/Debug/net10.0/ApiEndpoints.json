@@ -116,8 +116,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "point",
-        "Type": "AccesoDatos.Models.Point",
+        "Name": "dto",
+        "Type": "WebApi.Models.PointCreateDto",
         "IsRequired": true
       }
     ],
@@ -206,7 +206,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[AccesoDatos.Models.Project, AccesoDatos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApi.Models.ProjectResponseModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -232,7 +232,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AccesoDatos.Models.Project",
+        "Type": "WebApi.Models.ProjectResponseModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -258,7 +258,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AccesoDatos.Models.Project",
+        "Type": "WebApi.Models.ProjectResponseModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -344,6 +344,11 @@
         "IsRequired": false
       },
       {
+        "Name": "IsFeatured",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -390,6 +395,11 @@
         "IsRequired": false
       },
       {
+        "Name": "IsFeatured",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -402,7 +412,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AccesoDatos.Models.Project",
+        "Type": "WebApi.Models.ProjectResponseModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -555,8 +565,78 @@
         "IsRequired": false
       },
       {
+        "Name": "ShortDescriptions",
+        "Type": "System.String[]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GeneralDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ProfileImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "LinkedInUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GitHubUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TwitterUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FacebookUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InstagramUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "YearsOfExperience",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ExperienceLevel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SkillCategories",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.SkillCategoryModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Experiences",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.ExperienceModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Educations",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.EducationModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Certifications",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.CertificationModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       }
     ],
@@ -591,8 +671,78 @@
         "IsRequired": false
       },
       {
+        "Name": "ShortDescriptions",
+        "Type": "System.String[]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GeneralDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ProfileImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "LinkedInUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GitHubUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TwitterUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FacebookUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InstagramUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "YearsOfExperience",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ExperienceLevel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SkillCategories",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.SkillCategoryModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Experiences",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.ExperienceModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Educations",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.EducationModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Certifications",
+        "Type": "System.Collections.Generic.List\u00601[[WebApi.Models.CertificationModel, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       }
     ],

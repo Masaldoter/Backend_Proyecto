@@ -3,6 +3,7 @@ using AccesoDatos.Models;
 using AccesoDatos.Data;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Models;
+using System.Linq;
 
 namespace WebApi.Controllers
 {
@@ -52,7 +53,40 @@ namespace WebApi.Controllers
                 Email = model.Email,
                 Phone = model.Phone,
                 Bio = model.Bio,
-                ProfileImageUrl = imagePath
+                ShortDescriptions = model.ShortDescriptions,
+                GeneralDescription = model.GeneralDescription,
+                Location = model.Location,
+                ProfileImageUrl = imagePath,
+                LinkedInUrl = model.LinkedInUrl,
+                GitHubUrl = model.GitHubUrl,
+                TwitterUrl = model.TwitterUrl,
+                FacebookUrl = model.FacebookUrl,
+                InstagramUrl = model.InstagramUrl,
+                YearsOfExperience = model.YearsOfExperience,
+                ExperienceLevel = model.ExperienceLevel,
+                SkillCategories = model.SkillCategories?.Select(c => new SkillCategory {
+                    Category = c.Category,
+                    Skills = c.Skills
+                }).ToList(),
+                Experiences = model.Experiences?.Select(e => new Experience {
+                    Company = e.Company,
+                    Position = e.Position,
+                    Period = e.Period,
+                    Location = e.Location,
+                    Description = e.Description,
+                    Achievements = e.Achievements
+                }).ToList(),
+                Educations = model.Educations?.Select(ed => new Education {
+                    Institution = ed.Institution,
+                    Degree = ed.Degree,
+                    Period = ed.Period,
+                    Description = ed.Description
+                }).ToList(),
+                Certifications = model.Certifications?.Select(cert => new Certification {
+                    Name = cert.Name,
+                    Issuer = cert.Issuer,
+                    Date = cert.Date
+                }).ToList()
             };
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -86,6 +120,39 @@ namespace WebApi.Controllers
             user.Email = model.Email;
             user.Phone = model.Phone;
             user.Bio = model.Bio;
+            user.ShortDescriptions = model.ShortDescriptions;
+            user.GeneralDescription = model.GeneralDescription;
+            user.Location = model.Location;
+            user.LinkedInUrl = model.LinkedInUrl;
+            user.GitHubUrl = model.GitHubUrl;
+            user.TwitterUrl = model.TwitterUrl;
+            user.FacebookUrl = model.FacebookUrl;
+            user.InstagramUrl = model.InstagramUrl;
+            user.YearsOfExperience = model.YearsOfExperience;
+            user.ExperienceLevel = model.ExperienceLevel;
+            user.SkillCategories = model.SkillCategories?.Select(c => new SkillCategory {
+                Category = c.Category,
+                Skills = c.Skills
+            }).ToList();
+            user.Experiences = model.Experiences?.Select(e => new Experience {
+                Company = e.Company,
+                Position = e.Position,
+                Period = e.Period,
+                Location = e.Location,
+                Description = e.Description,
+                Achievements = e.Achievements
+            }).ToList();
+            user.Educations = model.Educations?.Select(ed => new Education {
+                Institution = ed.Institution,
+                Degree = ed.Degree,
+                Period = ed.Period,
+                Description = ed.Description
+            }).ToList();
+            user.Certifications = model.Certifications?.Select(cert => new Certification {
+                Name = cert.Name,
+                Issuer = cert.Issuer,
+                Date = cert.Date
+            }).ToList();
 
             // Actualizar imagen de perfil
             if (model.ProfileImage != null && model.ProfileImage.Length > 0)

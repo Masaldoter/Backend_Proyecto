@@ -1,0 +1,22 @@
+﻿using Microsoft.AspNetCore.Http;
+
+namespace WebApi.Models
+{
+    public class UserFormModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Bio { get; set; }
+        public string ShortDescription { get; set; } // Frase breve
+        public IFormFile ProfileImage { get; set; }
+        public string LinkedInUrl { get; set; } // Puede ir vacío
+        public string GitHubUrl { get; set; } // Puede ir vacío
+        public string TwitterUrl { get; set; } // Puede ir vacío
+        public string FacebookUrl { get; set; } // Puede ir vacío
+        public string InstagramUrl { get; set; } // Puede ir vacío
+        public int YearsOfExperience { get; set; } // Años de experiencia
+        public string ExperienceLevel { get; set; } // Nivel de experiencia
+        public string[] Skills { get; set; } // Habilidades o tecnologías dominadas
+    }
+}

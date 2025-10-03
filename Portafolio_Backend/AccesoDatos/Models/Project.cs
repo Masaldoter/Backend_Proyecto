@@ -11,5 +11,6 @@ namespace AccesoDatos.Models
         public int UserId { get; set; }
         public User User { get; set; }
         public ICollection<ProjectImage> Images { get; set; } // Relación con imágenes
+        public bool IsFeatured { get; set; } // Proyecto destacado
     }
 }

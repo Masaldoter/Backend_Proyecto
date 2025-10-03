@@ -3,116 +3,16 @@
   "WorkspaceRootPath": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\models\\projectformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\models\\projectformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\controllers\\pointscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\pointscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\data\\accesodatosdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\data\\accesodatosdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\models\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\models\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\UserDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\DAO\\UserDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\ContactMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\Models\\ContactMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\Models\\Project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\Models\\Point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Data\\PortfolioDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\Data\\PortfolioDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ProjectDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\DAO\\ProjectDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ContactMessageDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\DAO\\ContactMessageDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\PointDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portafolio_Backend\\DAO\\PointDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\dao\\projectdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\dao\\projectdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\dao\\contactmessagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\dao\\contactmessagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\dao\\pointdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\dao\\pointdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\models\\projectimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\models\\projectimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\wwwroot\\images\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\wwwroot\\images\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\accesodatos\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D86C87-25B2-4D88-AA1D-211BBC7D6937}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A776AC75-E897-4A0E-A367-B31B9FAFD40E}|WebApi\\WebApi.csproj|u:\\universidad\\8 semestre\\desarrollo web\\proyecto\\backend_proyecto\\portafolio_backend\\webapi\\models\\userformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -126,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,369 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PointsController.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\PointsController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\PointsController.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\PointsController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\PointsController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAkwAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T05:49:16.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "WebApi\\Program.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Program.cs",
-              "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T05:48:33.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "WebApi\\Properties\\launchSettings.json",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "WebApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-01T05:27:18.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContactMessagesController.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\ContactMessagesController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\ContactMessagesController.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\ContactMessagesController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\ContactMessagesController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T05:49:16.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProjectsController.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\ProjectsController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\ProjectsController.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\ProjectsController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\ProjectsController.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAvwKYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T05:49:16.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProjectFormModel.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\ProjectFormModel.cs",
-              "RelativeDocumentMoniker": "WebApi\\Models\\ProjectFormModel.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\ProjectFormModel.cs",
-              "RelativeToolTip": "WebApi\\Models\\ProjectFormModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T06:05:53.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccesoDatosDbContext.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "RelativeToolTip": "AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:37:01.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "WebApi",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\WebApi.csproj",
-              "RelativeDocumentMoniker": "WebApi\\WebApi.csproj",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\WebApi.csproj",
-              "RelativeToolTip": "WebApi\\WebApi.csproj",
-              "ViewState": "AgIAABUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-01T05:54:09.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": ".gitkeep",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\wwwroot\\images\\.gitkeep",
-              "RelativeDocumentMoniker": "WebApi\\wwwroot\\images\\.gitkeep",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\wwwroot\\images\\.gitkeep",
-              "RelativeToolTip": "WebApi\\wwwroot\\images\\.gitkeep",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-01T06:00:34.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "UserFormModel.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\UserFormModel.cs",
-              "RelativeDocumentMoniker": "WebApi\\Models\\UserFormModel.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\UserFormModel.cs",
-              "RelativeToolTip": "WebApi\\Models\\UserFormModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T06:06:11.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApi\\appsettings.json",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\appsettings.json",
-              "RelativeToolTip": "WebApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-01T05:27:22.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Project.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\Project.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\Models\\Project.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\Project.cs",
-              "RelativeToolTip": "AccesoDatos\\Models\\Project.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIBXwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:47:21.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProjectImage.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\ProjectImage.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\Models\\ProjectImage.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\ProjectImage.cs",
-              "RelativeToolTip": "AccesoDatos\\Models\\ProjectImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:47:13.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ContactMessage.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\ContactMessage.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\Models\\ContactMessage.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\ContactMessage.cs",
-              "RelativeToolTip": "AccesoDatos\\Models\\ContactMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:40:37.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
               "Title": "UserDao.cs",
               "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\UserDao.cs",
               "RelativeDocumentMoniker": "AccesoDatos\\DAO\\UserDao.cs",
               "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\UserDao.cs",
               "RelativeToolTip": "AccesoDatos\\DAO\\UserDao.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:41:02.884Z",
+              "WhenOpened": "2025-10-02T23:21:05.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ProjectDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\ProjectDao.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\DAO\\ProjectDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\ProjectDao.cs",
-              "RelativeToolTip": "AccesoDatos\\DAO\\ProjectDao.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "UserFormModel.cs",
+              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\UserFormModel.cs",
+              "RelativeDocumentMoniker": "WebApi\\Models\\UserFormModel.cs",
+              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\UserFormModel.cs",
+              "RelativeToolTip": "WebApi\\Models\\UserFormModel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAjwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:41:09.568Z",
+              "WhenOpened": "2025-10-02T22:26:01.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ContactMessageDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\ContactMessageDao.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\DAO\\ContactMessageDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\ContactMessageDao.cs",
-              "RelativeToolTip": "AccesoDatos\\DAO\\ContactMessageDao.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:41:14.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "PointDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\PointDao.cs",
-              "RelativeDocumentMoniker": "AccesoDatos\\DAO\\PointDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\DAO\\PointDao.cs",
-              "RelativeToolTip": "AccesoDatos\\DAO\\PointDao.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:41:22.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ContactMessage.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\ContactMessage.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\Models\\ContactMessage.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\ContactMessage.cs",
-              "RelativeToolTip": "Portafolio_Backend\\Models\\ContactMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\Models\\User.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\User.cs",
-              "RelativeToolTip": "Portafolio_Backend\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Project.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Project.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\Models\\Project.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Project.cs",
-              "RelativeToolTip": "Portafolio_Backend\\Models\\Project.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.681Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Point.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Point.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\Models\\Point.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Models\\Point.cs",
-              "RelativeToolTip": "Portafolio_Backend\\Models\\Point.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PortfolioDbContext.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Data\\PortfolioDbContext.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\Data\\PortfolioDbContext.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\Data\\PortfolioDbContext.cs",
-              "RelativeToolTip": "Portafolio_Backend\\Data\\PortfolioDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProjectDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ProjectDao.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\DAO\\ProjectDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ProjectDao.cs",
-              "RelativeToolTip": "Portafolio_Backend\\DAO\\ProjectDao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ContactMessageDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ContactMessageDao.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\DAO\\ContactMessageDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\ContactMessageDao.cs",
-              "RelativeToolTip": "Portafolio_Backend\\DAO\\ContactMessageDao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.845Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PointDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\PointDao.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\DAO\\PointDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\PointDao.cs",
-              "RelativeToolTip": "Portafolio_Backend\\DAO\\PointDao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserDao.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\UserDao.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\DAO\\UserDao.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\DAO\\UserDao.cs",
-              "RelativeToolTip": "Portafolio_Backend\\DAO\\UserDao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:35:22.56Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AccesoDatosDbContext.cs",
-              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "RelativeDocumentMoniker": "Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "RelativeToolTip": "Portafolio_Backend\\AccesoDatos\\Data\\AccesoDatosDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T05:34:19.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "WebApi\\Controllers\\UsersController.cs",
               "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\UsersController.cs",
               "RelativeToolTip": "WebApi\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAABRwHUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAMwBcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T05:49:16.467Z",
+              "WhenOpened": "2025-10-02T22:23:37.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\Models\\User.cs",
+              "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\User.cs",
+              "RelativeToolTip": "AccesoDatos\\Models\\User.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAIAywD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T22:23:10.888Z",
               "EditorCaption": ""
             }
           ]

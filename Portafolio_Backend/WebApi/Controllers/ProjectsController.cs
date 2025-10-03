@@ -19,20 +19,82 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
-            => await _context.Projects.Include(p => p.User).ToListAsync();
+        public async Task<ActionResult<IEnumerable<ProjectResponseModel>>> GetProjects()
+        {
+            var projects = await _context.Projects
+                .Include(p => p.User)
+                .Include(p => p.Images)
+                .Select(p => new ProjectResponseModel
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Description = p.Description,
+                    Technologies = p.Technologies,
+                    ProjectUrl = p.ProjectUrl,
+                    UserId = p.UserId,
+                    ImageUrl = p.ImageUrl,
+                    ImageUrls = p.Images.Select(img => img.Url).ToList(),
+                    IsFeatured = p.IsFeatured,
+                    User = p.User == null ? null : new UserResponseModel
+                    {
+                        Id = p.User.Id,
+                        Name = p.User.Name,
+                        Email = p.User.Email,
+                        Phone = p.User.Phone,
+                        Bio = p.User.Bio,
+                        ProfileImageUrl = p.User.ProfileImageUrl,
+                        LinkedInUrl = p.User.LinkedInUrl,
+                        GitHubUrl = p.User.GitHubUrl,
+                        TwitterUrl = p.User.TwitterUrl,
+                        FacebookUrl = p.User.FacebookUrl,
+                        InstagramUrl = p.User.InstagramUrl
+                    }
+                })
+                .ToListAsync();
+            return projects;
+        }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Project>> GetProject(int id)
+        public async Task<ActionResult<ProjectResponseModel>> GetProject(int id)
         {
-            var project = await _context.Projects.Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id);
+            var project = await _context.Projects
+                .Include(p => p.User)
+                .Include(p => p.Images)
+                .Where(p => p.Id == id)
+                .Select(p => new ProjectResponseModel
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Description = p.Description,
+                    Technologies = p.Technologies,
+                    ProjectUrl = p.ProjectUrl,
+                    UserId = p.UserId,
+                    ImageUrl = p.ImageUrl,
+                    ImageUrls = p.Images.Select(img => img.Url).ToList(),
+                    IsFeatured = p.IsFeatured,
+                    User = p.User == null ? null : new UserResponseModel
+                    {
+                        Id = p.User.Id,
+                        Name = p.User.Name,
+                        Email = p.User.Email,
+                        Phone = p.User.Phone,
+                        Bio = p.User.Bio,
+                        ProfileImageUrl = p.User.ProfileImageUrl,
+                        LinkedInUrl = p.User.LinkedInUrl,
+                        GitHubUrl = p.User.GitHubUrl,
+                        TwitterUrl = p.User.TwitterUrl,
+                        FacebookUrl = p.User.FacebookUrl,
+                        InstagramUrl = p.User.InstagramUrl
+                    }
+                })
+                .FirstOrDefaultAsync();
             if (project == null) return NotFound();
             return project;
         }
 
         // Nuevo endpoint para subir imagen de proyecto y crear proyecto
         [HttpPost("with-image")]
-        public async Task<ActionResult<Project>> PostProjectWithImage([FromForm] ProjectFormModel model)
+        public async Task<ActionResult<ProjectResponseModel>> PostProjectWithImage([FromForm] ProjectFormModel model)
         {
             string imagePath = null;
             if (model.Image != null && model.Image.Length > 0)
@@ -55,6 +117,7 @@ namespace WebApi.Controllers
                 ProjectUrl = model.ProjectUrl,
                 UserId = model.UserId,
                 ImageUrl = imagePath,
+                IsFeatured = model.IsFeatured, // Nuevo campo
                 Images = new List<ProjectImage>()
             };
 
@@ -81,15 +144,39 @@ namespace WebApi.Controllers
 
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, project);
+
+            // Devuelve solo el modelo de respuesta para evitar ciclos
+            var response = new ProjectResponseModel {
+                Id = project.Id,
+                Title = project.Title,
+                Description = project.Description,
+                Technologies = project.Technologies,
+                ProjectUrl = project.ProjectUrl,
+                UserId = project.UserId,
+                ImageUrl = project.ImageUrl,
+                ImageUrls = project.Images.Select(img => img.Url).ToList(),
+                User = null // Puedes incluir el usuario si lo necesitas
+            };
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, response);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Project>> PostProject(Project project)
+        public async Task<ActionResult<ProjectResponseModel>> PostProject(Project project)
         {
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, project);
+            var response = new ProjectResponseModel {
+                Id = project.Id,
+                Title = project.Title,
+                Description = project.Description,
+                Technologies = project.Technologies,
+                ProjectUrl = project.ProjectUrl,
+                UserId = project.UserId,
+                ImageUrl = project.ImageUrl,
+                ImageUrls = new List<string>(),
+                User = null
+            };
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, response);
         }
 
         [HttpPut("{id}")]
@@ -112,6 +199,7 @@ namespace WebApi.Controllers
             project.Technologies = model.Technologies;
             project.ProjectUrl = model.ProjectUrl;
             project.UserId = model.UserId;
+            project.IsFeatured = model.IsFeatured; // Nuevo campo
 
             // Actualizar imagen principal
             if (model.Image != null && model.Image.Length > 0)
@@ -130,7 +218,6 @@ namespace WebApi.Controllers
             // Actualizar imágenes adicionales
             if (model.Images != null && model.Images.Count > 0)
             {
-                // Elimina las imágenes anteriores
                 project.Images.Clear();
                 foreach (var img in model.Images)
                 {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using AccesoDatos.Models;
 using AccesoDatos.Data;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
@@ -17,22 +18,32 @@ namespace WebApi.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Point>>> GetPoints()
-            => await _context.Points.Include(p => p.Project).ToListAsync();
+            => await _context.Points.ToListAsync(); // No incluir Project para evitar ciclos
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Point>> GetPoint(int id)
         {
-            var point = await _context.Points.Include(p => p.Project).FirstOrDefaultAsync(p => p.Id == id);
+            var point = await _context.Points.FirstOrDefaultAsync(p => p.Id == id); // No incluir Project para evitar ciclos
             if (point == null) return NotFound();
             return point;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Point>> PostPoint(Point point)
+        public async Task<ActionResult<Point>> PostPoint(PointCreateDto dto)
         {
+            var point = new Point
+            {
+                Description = dto.Description,
+                ProjectId = dto.ProjectId
+            };
             _context.Points.Add(point);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetPoint), new { id = point.Id }, point);
+            // Devuelve solo los datos simples, no la entidad completa para evitar ciclos
+            return CreatedAtAction(nameof(GetPoint), new { id = point.Id }, new {
+                id = point.Id,
+                description = point.Description,
+                projectId = point.ProjectId
+            });
         }
 
         [HttpPut("{id}")]

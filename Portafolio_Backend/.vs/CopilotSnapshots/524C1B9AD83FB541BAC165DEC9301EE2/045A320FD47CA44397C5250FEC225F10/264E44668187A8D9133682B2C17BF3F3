@@ -1,0 +1,250 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using AccesoDatos.Models;
+using AccesoDatos.Data;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
+
+namespace WebApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProjectsController : ControllerBase
+    {
+        private readonly AccesoDatosDbContext _context;
+        private readonly IWebHostEnvironment _env;
+        public ProjectsController(AccesoDatosDbContext context, IWebHostEnvironment env)
+        {
+            _context = context;
+            _env = env;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProjectResponseModel>>> GetProjects()
+        {
+            var projects = await _context.Projects
+                .Include(p => p.User)
+                .Include(p => p.Images)
+                .Select(p => new ProjectResponseModel
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Description = p.Description,
+                    Technologies = p.Technologies,
+                    ProjectUrl = p.ProjectUrl,
+                    UserId = p.UserId,
+                    ImageUrl = p.ImageUrl,
+                    ImageUrls = p.Images.Select(img => img.Url).ToList(),
+                    IsFeatured = p.IsFeatured,
+                    User = p.User == null ? null : new UserResponseModel
+                    {
+                        Id = p.User.Id,
+                        Name = p.User.Name,
+                        Email = p.User.Email,
+                        Phone = p.User.Phone,
+                        Bio = p.User.Bio,
+                        ProfileImageUrl = p.User.ProfileImageUrl,
+                        LinkedInUrl = p.User.LinkedInUrl,
+                        GitHubUrl = p.User.GitHubUrl,
+                        TwitterUrl = p.User.TwitterUrl,
+                        FacebookUrl = p.User.FacebookUrl
+                    }
+                })
+                .ToListAsync();
+            return projects;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProjectResponseModel>> GetProject(int id)
+        {
+            var project = await _context.Projects
+                .Include(p => p.User)
+                .Include(p => p.Images)
+                .Where(p => p.Id == id)
+                .Select(p => new ProjectResponseModel
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Description = p.Description,
+                    Technologies = p.Technologies,
+                    ProjectUrl = p.ProjectUrl,
+                    UserId = p.UserId,
+                    ImageUrl = p.ImageUrl,
+                    ImageUrls = p.Images.Select(img => img.Url).ToList(),
+                    IsFeatured = p.IsFeatured,
+                    User = p.User == null ? null : new UserResponseModel
+                    {
+                        Id = p.User.Id,
+                        Name = p.User.Name,
+                        Email = p.User.Email,
+                        Phone = p.User.Phone,
+                        Bio = p.User.Bio,
+                        ProfileImageUrl = p.User.ProfileImageUrl,
+                        LinkedInUrl = p.User.LinkedInUrl,
+                        GitHubUrl = p.User.GitHubUrl,
+                        TwitterUrl = p.User.TwitterUrl,
+                        FacebookUrl = p.User.FacebookUrl
+                    }
+                })
+                .FirstOrDefaultAsync();
+            if (project == null) return NotFound();
+            return project;
+        }
+
+        // Nuevo endpoint para subir imagen de proyecto y crear proyecto
+        [HttpPost("with-image")]
+        public async Task<ActionResult<ProjectResponseModel>> PostProjectWithImage([FromForm] ProjectFormModel model)
+        {
+            string imagePath = null;
+            if (model.Image != null && model.Image.Length > 0)
+            {
+                var imagesFolder = Path.Combine(_env.WebRootPath, "images");
+                Directory.CreateDirectory(imagesFolder);
+                var fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(imagesFolder, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+                imagePath = $"images/{fileName}";
+            }
+
+            var project = new Project {
+                Title = model.Title,
+                Description = model.Description,
+                Technologies = model.Technologies,
+                ProjectUrl = model.ProjectUrl,
+                UserId = model.UserId,
+                ImageUrl = imagePath,
+                Images = new List<ProjectImage>()
+            };
+
+            // Guardar imágenes adicionales
+            if (model.Images != null)
+            {
+                foreach (var img in model.Images)
+                {
+                    if (img != null && img.Length > 0)
+                    {
+                        var imagesFolder = Path.Combine(_env.WebRootPath, "images");
+                        Directory.CreateDirectory(imagesFolder);
+                        var fileName = Guid.NewGuid() + Path.GetExtension(img.FileName);
+                        var filePath = Path.Combine(imagesFolder, fileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await img.CopyToAsync(stream);
+                        }
+                        var url = $"images/{fileName}";
+                        project.Images.Add(new ProjectImage { Url = url });
+                    }
+                }
+            }
+
+            _context.Projects.Add(project);
+            await _context.SaveChangesAsync();
+
+            // Devuelve solo el modelo de respuesta para evitar ciclos
+            var response = new ProjectResponseModel {
+                Id = project.Id,
+                Title = project.Title,
+                Description = project.Description,
+                Technologies = project.Technologies,
+                ProjectUrl = project.ProjectUrl,
+                UserId = project.UserId,
+                ImageUrl = project.ImageUrl,
+                ImageUrls = project.Images.Select(img => img.Url).ToList(),
+                User = null // Puedes incluir el usuario si lo necesitas
+            };
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ProjectResponseModel>> PostProject(Project project)
+        {
+            _context.Projects.Add(project);
+            await _context.SaveChangesAsync();
+            var response = new ProjectResponseModel {
+                Id = project.Id,
+                Title = project.Title,
+                Description = project.Description,
+                Technologies = project.Technologies,
+                ProjectUrl = project.ProjectUrl,
+                UserId = project.UserId,
+                ImageUrl = project.ImageUrl,
+                ImageUrls = new List<string>(),
+                User = null
+            };
+            return CreatedAtAction(nameof(GetProject), new { id = project.Id }, response);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProject(int id, Project project)
+        {
+            if (id != project.Id) return BadRequest();
+            _context.Entry(project).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut("{id}/with-image")]
+        public async Task<IActionResult> PutProjectWithImage(int id, [FromForm] ProjectFormModel model)
+        {
+            var project = await _context.Projects.Include(p => p.Images).FirstOrDefaultAsync(p => p.Id == id);
+            if (project == null) return NotFound();
+
+            project.Title = model.Title;
+            project.Description = model.Description;
+            project.Technologies = model.Technologies;
+            project.ProjectUrl = model.ProjectUrl;
+            project.UserId = model.UserId;
+
+            // Actualizar imagen principal
+            if (model.Image != null && model.Image.Length > 0)
+            {
+                var imagesFolder = Path.Combine(_env.WebRootPath, "images");
+                Directory.CreateDirectory(imagesFolder);
+                var fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(imagesFolder, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+                project.ImageUrl = $"images/{fileName}";
+            }
+
+            // Actualizar imágenes adicionales
+            if (model.Images != null && model.Images.Count > 0)
+            {
+                project.Images.Clear();
+                foreach (var img in model.Images)
+                {
+                    if (img != null && img.Length > 0)
+                    {
+                        var imagesFolder = Path.Combine(_env.WebRootPath, "images");
+                        Directory.CreateDirectory(imagesFolder);
+                        var fileName = Guid.NewGuid() + Path.GetExtension(img.FileName);
+                        var filePath = Path.Combine(imagesFolder, fileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await img.CopyToAsync(stream);
+                        }
+                        var url = $"images/{fileName}";
+                        project.Images.Add(new ProjectImage { Url = url });
+                    }
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProject(int id)
+        {
+            var project = await _context.Projects.FindAsync(id);
+            if (project == null) return NotFound();
+            _context.Projects.Remove(project);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+    }
+}

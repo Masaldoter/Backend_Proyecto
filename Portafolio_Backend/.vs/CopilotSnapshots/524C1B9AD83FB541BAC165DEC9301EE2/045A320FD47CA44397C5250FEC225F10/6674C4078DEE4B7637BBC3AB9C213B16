@@ -1,0 +1,31 @@
+﻿namespace WebApi.Models
+{
+    public class ProjectResponseModel
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string[] Technologies { get; set; }
+        public string ProjectUrl { get; set; }
+        public int UserId { get; set; }
+        public string ImageUrl { get; set; } // Imagen principal
+        public List<string> ImageUrls { get; set; } // Imágenes adicionales
+        public UserResponseModel User { get; set; }
+        public bool IsFeatured { get; set; } // Proyecto destacado
+    }
+
+    public class UserResponseModel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Bio { get; set; }
+        public string ProfileImageUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string GitHubUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string FacebookUrl { get; set; }
+        // Puedes agregar más redes sociales si lo necesitas
+    }
+}

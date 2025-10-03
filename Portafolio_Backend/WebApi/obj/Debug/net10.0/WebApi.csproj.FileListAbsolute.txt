@@ -157,5 +157,5 @@ U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Ba
 U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\bin\Debug\net10.0\WebApi.staticwebassets.runtime.json
+U:\Universidad\8 Semestre\Desarrollo Web\Proyecto\Backend_Proyecto\Portafolio_Backend\WebApi\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

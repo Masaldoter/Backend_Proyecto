@@ -1,13 +1,59 @@
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace WebApi.Models
 {
+    public class SkillCategoryModel
+    {
+        public string Category { get; set; }
+        public string[] Skills { get; set; }
+    }
+
+    public class ExperienceModel
+    {
+        public string Company { get; set; }
+        public string Position { get; set; }
+        public string Period { get; set; }
+        public string Location { get; set; }
+        public string Description { get; set; }
+        public List<string> Achievements { get; set; }
+    }
+
+    public class EducationModel
+    {
+        public string Institution { get; set; }
+        public string Degree { get; set; }
+        public string Period { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class CertificationModel
+    {
+        public string Name { get; set; }
+        public string Issuer { get; set; }
+        public string Date { get; set; }
+    }
+
     public class UserFormModel
     {
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Bio { get; set; }
+        public string[] ShortDescriptions { get; set; }
+        public string GeneralDescription { get; set; } // Ejemplo: Senior Full Stack Developer
+        public string Location { get; set; }
         public IFormFile ProfileImage { get; set; }
+        public string LinkedInUrl { get; set; } = "";
+        public string GitHubUrl { get; set; } = "";
+        public string TwitterUrl { get; set; } = "";
+        public string FacebookUrl { get; set; } = "";
+        public string InstagramUrl { get; set; } = "";
+        public int YearsOfExperience { get; set; }
+        public string ExperienceLevel { get; set; }
+        public List<SkillCategoryModel> SkillCategories { get; set; } = new(); // Opcional
+        public List<ExperienceModel> Experiences { get; set; } = new(); // Opcional
+        public List<EducationModel> Educations { get; set; } = new(); // Opcional
+        public List<CertificationModel> Certifications { get; set; } = new(); // Opcional
     }
 }
