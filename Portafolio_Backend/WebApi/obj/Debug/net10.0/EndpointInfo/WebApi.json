@@ -1721,7 +1721,8 @@
           },
           "yearsOfExperience": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "experienceLevel": {
             "type": "string",

@@ -40,24 +40,24 @@ namespace AccesoDatos.Models
     public class User
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Bio { get; set; }
-        public string[] ShortDescriptions { get; set; }
-        public string GeneralDescription { get; set; }
-        public string Location { get; set; }
-        public string ProfileImageUrl { get; set; }
-        public string LinkedInUrl { get; set; }
-        public string GitHubUrl { get; set; }
-        public string TwitterUrl { get; set; }
-        public string FacebookUrl { get; set; }
-        public string InstagramUrl { get; set; }
-        public int YearsOfExperience { get; set; }
-        public string ExperienceLevel { get; set; }
-        public List<SkillCategory> SkillCategories { get; set; }
-        public List<Experience> Experiences { get; set; }
-        public List<Education> Educations { get; set; }
-        public List<Certification> Certifications { get; set; }
+        public string Name { get; set; } // Obligatorio
+        public string Email { get; set; } // Obligatorio
+        public string Phone { get; set; } // Obligatorio
+        public string? Bio { get; set; }
+        public string[]? ShortDescriptions { get; set; }
+        public string? GeneralDescription { get; set; }
+        public string? Location { get; set; }
+        public string? ProfileImageUrl { get; set; }
+        public string? LinkedInUrl { get; set; }
+        public string? GitHubUrl { get; set; }
+        public string? TwitterUrl { get; set; }
+        public string? FacebookUrl { get; set; }
+        public string? InstagramUrl { get; set; }
+        public int? YearsOfExperience { get; set; }
+        public string? ExperienceLevel { get; set; }
+        public List<SkillCategory>? SkillCategories { get; set; }
+        public List<Experience>? Experiences { get; set; }
+        public List<Education>? Educations { get; set; }
+        public List<Certification>? Certifications { get; set; }
     }
 }

@@ -21,12 +21,25 @@ namespace WebApi.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
-            => await _context.Users.ToListAsync();
+        {
+            var users = await _context.Users
+                .Include(u => u.SkillCategories)
+                .Include(u => u.Experiences)
+                .Include(u => u.Educations)
+                .Include(u => u.Certifications)
+                .ToListAsync();
+            return users;
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.SkillCategories)
+                .Include(u => u.Experiences)
+                .Include(u => u.Educations)
+                .Include(u => u.Certifications)
+                .FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return NotFound();
             return user;
         }
@@ -113,7 +126,12 @@ namespace WebApi.Controllers
         [HttpPut("{id}/with-image")]
         public async Task<IActionResult> PutUserWithImage(int id, [FromForm] UserFormModel model)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.SkillCategories)
+                .Include(u => u.Experiences)
+                .Include(u => u.Educations)
+                .Include(u => u.Certifications)
+                .FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return NotFound();
 
             user.Name = model.Name;
@@ -130,29 +148,41 @@ namespace WebApi.Controllers
             user.InstagramUrl = model.InstagramUrl;
             user.YearsOfExperience = model.YearsOfExperience;
             user.ExperienceLevel = model.ExperienceLevel;
-            user.SkillCategories = model.SkillCategories?.Select(c => new SkillCategory {
-                Category = c.Category,
-                Skills = c.Skills
-            }).ToList();
-            user.Experiences = model.Experiences?.Select(e => new Experience {
-                Company = e.Company,
-                Position = e.Position,
-                Period = e.Period,
-                Location = e.Location,
-                Description = e.Description,
-                Achievements = e.Achievements
-            }).ToList();
-            user.Educations = model.Educations?.Select(ed => new Education {
-                Institution = ed.Institution,
-                Degree = ed.Degree,
-                Period = ed.Period,
-                Description = ed.Description
-            }).ToList();
-            user.Certifications = model.Certifications?.Select(cert => new Certification {
-                Name = cert.Name,
-                Issuer = cert.Issuer,
-                Date = cert.Date
-            }).ToList();
+
+            user.SkillCategories?.Clear();
+            if (model.SkillCategories != null)
+                user.SkillCategories = model.SkillCategories.Select(c => new SkillCategory {
+                    Category = c.Category,
+                    Skills = c.Skills
+                }).ToList();
+
+            user.Experiences?.Clear();
+            if (model.Experiences != null)
+                user.Experiences = model.Experiences.Select(e => new Experience {
+                    Company = e.Company,
+                    Position = e.Position,
+                    Period = e.Period,
+                    Location = e.Location,
+                    Description = e.Description,
+                    Achievements = e.Achievements
+                }).ToList();
+
+            user.Educations?.Clear();
+            if (model.Educations != null)
+                user.Educations = model.Educations.Select(ed => new Education {
+                    Institution = ed.Institution,
+                    Degree = ed.Degree,
+                    Period = ed.Period,
+                    Description = ed.Description
+                }).ToList();
+
+            user.Certifications?.Clear();
+            if (model.Certifications != null)
+                user.Certifications = model.Certifications.Select(cert => new Certification {
+                    Name = cert.Name,
+                    Issuer = cert.Issuer,
+                    Date = cert.Date
+                }).ToList();
 
             // Actualizar imagen de perfil
             if (model.ProfileImage != null && model.ProfileImage.Length > 0)

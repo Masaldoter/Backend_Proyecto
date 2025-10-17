@@ -1,0 +1,63 @@
+﻿using System.Collections.Generic;
+
+namespace AccesoDatos.Models
+{
+    public class SkillCategory
+    {
+        public int Id { get; set; } // Clave primaria
+        public string Category { get; set; }
+        public string[] Skills { get; set; }
+    }
+
+    public class Experience
+    {
+        public int Id { get; set; } // Clave primaria
+        public string Company { get; set; }
+        public string Position { get; set; }
+        public string Period { get; set; } // Nuevo campo
+        public string Location { get; set; } // Nuevo campo
+        public string Description { get; set; }
+        public List<string> Achievements { get; set; } // Nuevo campo
+    }
+
+    public class Education
+    {
+        public int Id { get; set; } // Clave primaria
+        public string Institution { get; set; }
+        public string Degree { get; set; }
+        public string Period { get; set; } // Nuevo campo
+        public string Description { get; set; } // Nuevo campo
+    }
+
+    public class Certification
+    {
+        public int Id { get; set; } // Clave primaria
+        public string Name { get; set; }
+        public string Issuer { get; set; }
+        public string Date { get; set; }
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Bio { get; set; }
+        public string[] ShortDescriptions { get; set; }
+        public string GeneralDescription { get; set; }
+        public string Location { get; set; }
+        public string ProfileImageUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string GitHubUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; }
+        public int YearsOfExperience { get; set; }
+        public string ExperienceLevel { get; set; }
+        public List<SkillCategory> SkillCategories { get; set; }
+        public List<Experience> Experiences { get; set; }
+        public List<Education> Educations { get; set; }
+        public List<Certification> Certifications { get; set; }
+    }
+}

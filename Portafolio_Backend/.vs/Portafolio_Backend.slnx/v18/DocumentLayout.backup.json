@@ -42,8 +42,7 @@
               "RelativeToolTip": "AccesoDatos\\DAO\\UserDao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T23:21:05.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T23:21:05.691Z"
             },
             {
               "$type": "Document",
@@ -53,10 +52,9 @@
               "RelativeDocumentMoniker": "WebApi\\Models\\UserFormModel.cs",
               "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Models\\UserFormModel.cs",
               "RelativeToolTip": "WebApi\\Models\\UserFormModel.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAjwDsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAKBhwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T22:26:01.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T22:26:01.571Z"
             },
             {
               "$type": "Document",
@@ -66,7 +64,7 @@
               "RelativeDocumentMoniker": "WebApi\\Controllers\\UsersController.cs",
               "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\WebApi\\Controllers\\UsersController.cs",
               "RelativeToolTip": "WebApi\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAMwBcAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAgwNYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-02T22:23:37.5Z",
               "EditorCaption": ""
@@ -79,10 +77,9 @@
               "RelativeDocumentMoniker": "AccesoDatos\\Models\\User.cs",
               "ToolTip": "U:\\Universidad\\8 Semestre\\Desarrollo Web\\Proyecto\\Backend_Proyecto\\Portafolio_Backend\\AccesoDatos\\Models\\User.cs",
               "RelativeToolTip": "AccesoDatos\\Models\\User.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAIAywD4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAABBwD4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T22:23:10.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T22:23:10.888Z"
             }
           ]
         }

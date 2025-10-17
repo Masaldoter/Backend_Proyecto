@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApi.Models
 {
@@ -43,17 +44,17 @@ namespace WebApi.Models
         public string[] ShortDescriptions { get; set; }
         public string GeneralDescription { get; set; } // Ejemplo: Senior Full Stack Developer
         public string Location { get; set; }
-        public IFormFile ProfileImage { get; set; }
-        public string LinkedInUrl { get; set; } = "";
-        public string GitHubUrl { get; set; } = "";
-        public string TwitterUrl { get; set; } = "";
-        public string FacebookUrl { get; set; } = "";
-        public string InstagramUrl { get; set; } = "";
+        public IFormFile? ProfileImage { get; set; } // Opcional
+        public string? LinkedInUrl { get; set; } // Opcional
+        public string? GitHubUrl { get; set; } // Opcional
+        public string? TwitterUrl { get; set; } // Opcional
+        public string? FacebookUrl { get; set; } // Opcional
+        public string? InstagramUrl { get; set; } // Opcional
         public int YearsOfExperience { get; set; }
         public string ExperienceLevel { get; set; }
-        public List<SkillCategoryModel> SkillCategories { get; set; } = new(); // Opcional
-        public List<ExperienceModel> Experiences { get; set; } = new(); // Opcional
-        public List<EducationModel> Educations { get; set; } = new(); // Opcional
-        public List<CertificationModel> Certifications { get; set; } = new(); // Opcional
+        public List<SkillCategoryModel>? SkillCategories { get; set; } = new(); // Opcional
+        public List<ExperienceModel>? Experiences { get; set; } = new(); // Opcional
+        public List<EducationModel>? Educations { get; set; } = new(); // Opcional
+        public List<CertificationModel>? Certifications { get; set; } = new(); // Opcional
     }
 }
