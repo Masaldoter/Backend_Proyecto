@@ -21,6 +21,13 @@ namespace AccesoDatos.Data
                     v => string.Join(';', v),
                     v => v.Split(';', StringSplitOptions.RemoveEmptyEntries)
                 );
+
+            // Configurar clave foránea opcional de ContactMessage a User
+            modelBuilder.Entity<ContactMessage>()
+                .HasOne(cm => cm.User)
+                .WithMany()
+                .HasForeignKey(cm => cm.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

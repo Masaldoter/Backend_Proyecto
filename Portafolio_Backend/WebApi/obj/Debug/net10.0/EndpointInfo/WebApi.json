@@ -5,6 +5,116 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/change-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ContactMessages": {
       "get": {
         "tags": [
@@ -212,24 +322,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Point"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Point"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Point"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -292,17 +385,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Point"
+                "$ref": "#/components/schemas/PointCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Point"
+                "$ref": "#/components/schemas/PointCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Point"
+                "$ref": "#/components/schemas/PointCreateDto"
               }
             }
           }
@@ -529,6 +622,12 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "Description",
+                  "Image",
+                  "Title",
+                  "UserId"
+                ],
                 "type": "object",
                 "properties": {
                   "Title": {
@@ -543,16 +642,6 @@
                       "type": "string"
                     }
                   },
-                  "ProjectUrl": {
-                    "type": "string"
-                  },
-                  "UserId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "IsFeatured": {
-                    "type": "boolean"
-                  },
                   "Image": {
                     "type": "string",
                     "format": "binary"
@@ -563,6 +652,17 @@
                       "type": "string",
                       "format": "binary"
                     }
+                  },
+                  "ProjectUrl": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IsFeatured": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -576,6 +676,12 @@
                 "Technologies": {
                   "style": "form"
                 },
+                "Image": {
+                  "style": "form"
+                },
+                "Images": {
+                  "style": "form"
+                },
                 "ProjectUrl": {
                   "style": "form"
                 },
@@ -583,12 +689,6 @@
                   "style": "form"
                 },
                 "IsFeatured": {
-                  "style": "form"
-                },
-                "Image": {
-                  "style": "form"
-                },
-                "Images": {
                   "style": "form"
                 }
               }
@@ -639,6 +739,11 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "Description",
+                  "Title",
+                  "UserId"
+                ],
                 "type": "object",
                 "properties": {
                   "Title": {
@@ -653,19 +758,12 @@
                       "type": "string"
                     }
                   },
-                  "ProjectUrl": {
-                    "type": "string"
-                  },
-                  "UserId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "IsFeatured": {
-                    "type": "boolean"
-                  },
                   "Image": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "ImageUrl": {
+                    "type": "string"
                   },
                   "Images": {
                     "type": "array",
@@ -673,6 +771,23 @@
                       "type": "string",
                       "format": "binary"
                     }
+                  },
+                  "RemoveImageUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "ProjectUrl": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IsFeatured": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -686,6 +801,18 @@
                 "Technologies": {
                   "style": "form"
                 },
+                "Image": {
+                  "style": "form"
+                },
+                "ImageUrl": {
+                  "style": "form"
+                },
+                "Images": {
+                  "style": "form"
+                },
+                "RemoveImageUrls": {
+                  "style": "form"
+                },
                 "ProjectUrl": {
                   "style": "form"
                 },
@@ -693,12 +820,6 @@
                   "style": "form"
                 },
                 "IsFeatured": {
-                  "style": "form"
-                },
-                "Image": {
-                  "style": "form"
-                },
-                "Images": {
                   "style": "form"
                 }
               }
@@ -1319,6 +1440,29 @@
         },
         "additionalProperties": false
       },
+      "ChangePasswordModel": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "identifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "currentPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ContactMessage": {
         "type": "object",
         "properties": {
@@ -1334,6 +1478,10 @@
             "type": "string",
             "nullable": true
           },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
           "message": {
             "type": "string",
             "nullable": true
@@ -1341,6 +1489,14 @@
           "sentAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
           }
         },
         "additionalProperties": false
@@ -1458,6 +1614,42 @@
             "items": {
               "type": "string"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginModel": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -1619,6 +1811,32 @@
         },
         "additionalProperties": false
       },
+      "RegisterModel": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SkillCategory": {
         "type": "object",
         "properties": {
@@ -1673,6 +1891,14 @@
             "nullable": true
           },
           "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordHash": {
             "type": "string",
             "nullable": true
           },

@@ -77,30 +77,33 @@ namespace WebApi.Controllers
                 InstagramUrl = model.InstagramUrl,
                 YearsOfExperience = model.YearsOfExperience,
                 ExperienceLevel = model.ExperienceLevel,
-                SkillCategories = model.SkillCategories?.Select(c => new SkillCategory {
-                    Category = c.Category,
-                    Skills = c.Skills
-                }).ToList(),
-                Experiences = model.Experiences?.Select(e => new Experience {
-                    Company = e.Company,
-                    Position = e.Position,
-                    Period = e.Period,
-                    Location = e.Location,
-                    Description = e.Description,
-                    Achievements = e.Achievements
-                }).ToList(),
-                Educations = model.Educations?.Select(ed => new Education {
-                    Institution = ed.Institution,
-                    Degree = ed.Degree,
-                    Period = ed.Period,
-                    Description = ed.Description
-                }).ToList(),
-                Certifications = model.Certifications?.Select(cert => new Certification {
-                    Name = cert.Name,
-                    Issuer = cert.Issuer,
-                    Date = cert.Date
-                }).ToList()
+                SkillCategories = new List<SkillCategory>(),
+                Experiences = new List<Experience>(),
+                Educations = new List<Education>(),
+                Certifications = new List<Certification>()
             };
+
+            if (model.SkillCategories != null)
+            {
+                foreach (var c in model.SkillCategories)
+                    user.SkillCategories.Add(new SkillCategory { Category = c.Category, Skills = c.Skills });
+            }
+            if (model.Experiences != null)
+            {
+                foreach (var e in model.Experiences)
+                    user.Experiences.Add(new Experience { Company = e.Company, Position = e.Position, Period = e.Period, Location = e.Location, Description = e.Description, Achievements = e.Achievements });
+            }
+            if (model.Educations != null)
+            {
+                foreach (var ed in model.Educations)
+                    user.Educations.Add(new Education { Institution = ed.Institution, Degree = ed.Degree, Period = ed.Period, Description = ed.Description });
+            }
+            if (model.Certifications != null)
+            {
+                foreach (var cert in model.Certifications)
+                    user.Certifications.Add(new Certification { Name = cert.Name, Issuer = cert.Issuer, Date = cert.Date });
+            }
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
@@ -134,6 +137,7 @@ namespace WebApi.Controllers
                 .FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return NotFound();
 
+            // Datos simples
             user.Name = model.Name;
             user.Email = model.Email;
             user.Phone = model.Phone;
@@ -149,40 +153,54 @@ namespace WebApi.Controllers
             user.YearsOfExperience = model.YearsOfExperience;
             user.ExperienceLevel = model.ExperienceLevel;
 
-            user.SkillCategories?.Clear();
+            // Colecciones: eliminar existentes y volver a agregar para asegurar FK correctas
+            user.SkillCategories ??= new List<SkillCategory>();
+            if (user.SkillCategories.Count > 0)
+            {
+                _context.RemoveRange(user.SkillCategories);
+                user.SkillCategories.Clear();
+            }
             if (model.SkillCategories != null)
-                user.SkillCategories = model.SkillCategories.Select(c => new SkillCategory {
-                    Category = c.Category,
-                    Skills = c.Skills
-                }).ToList();
+            {
+                foreach (var c in model.SkillCategories)
+                    user.SkillCategories.Add(new SkillCategory { Category = c.Category, Skills = c.Skills });
+            }
 
-            user.Experiences?.Clear();
+            user.Experiences ??= new List<Experience>();
+            if (user.Experiences.Count > 0)
+            {
+                _context.RemoveRange(user.Experiences);
+                user.Experiences.Clear();
+            }
             if (model.Experiences != null)
-                user.Experiences = model.Experiences.Select(e => new Experience {
-                    Company = e.Company,
-                    Position = e.Position,
-                    Period = e.Period,
-                    Location = e.Location,
-                    Description = e.Description,
-                    Achievements = e.Achievements
-                }).ToList();
+            {
+                foreach (var e in model.Experiences)
+                    user.Experiences.Add(new Experience { Company = e.Company, Position = e.Position, Period = e.Period, Location = e.Location, Description = e.Description, Achievements = e.Achievements });
+            }
 
-            user.Educations?.Clear();
+            user.Educations ??= new List<Education>();
+            if (user.Educations.Count > 0)
+            {
+                _context.RemoveRange(user.Educations);
+                user.Educations.Clear();
+            }
             if (model.Educations != null)
-                user.Educations = model.Educations.Select(ed => new Education {
-                    Institution = ed.Institution,
-                    Degree = ed.Degree,
-                    Period = ed.Period,
-                    Description = ed.Description
-                }).ToList();
+            {
+                foreach (var ed in model.Educations)
+                    user.Educations.Add(new Education { Institution = ed.Institution, Degree = ed.Degree, Period = ed.Period, Description = ed.Description });
+            }
 
-            user.Certifications?.Clear();
+            user.Certifications ??= new List<Certification>();
+            if (user.Certifications.Count > 0)
+            {
+                _context.RemoveRange(user.Certifications);
+                user.Certifications.Clear();
+            }
             if (model.Certifications != null)
-                user.Certifications = model.Certifications.Select(cert => new Certification {
-                    Name = cert.Name,
-                    Issuer = cert.Issuer,
-                    Date = cert.Date
-                }).ToList();
+            {
+                foreach (var cert in model.Certifications)
+                    user.Certifications.Add(new Certification { Name = cert.Name, Issuer = cert.Issuer, Date = cert.Date });
+            }
 
             // Actualizar imagen de perfil
             if (model.ProfileImage != null && model.ProfileImage.Length > 0)

@@ -1,0 +1,99 @@
+using Microsoft.AspNetCore.Mvc;
+using AccesoDatos.Data;
+using AccesoDatos.Models;
+using WebApi.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+
+namespace WebApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AuthController : ControllerBase
+    {
+        private readonly AccesoDatosDbContext _context;
+        public AuthController(AccesoDatosDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterModel model)
+        {
+            if (string.IsNullOrWhiteSpace(model.Password)) return BadRequest("Password is required.");
+
+            // Check uniqueness
+            if (!string.IsNullOrEmpty(model.Username))
+            {
+                if (await _context.Users.AnyAsync(u => u.Username == model.Username))
+                    return BadRequest("Username already taken.");
+            }
+            if (!string.IsNullOrEmpty(model.Email))
+            {
+                if (await _context.Users.AnyAsync(u => u.Email == model.Email))
+                    return BadRequest("Email already registered.");
+            }
+
+            var user = new User
+            {
+                Name = model.Name,
+                Email = model.Email,
+                Phone = model.Phone,
+                Username = model.Username,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password)
+            };
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { user.Id, user.Username, user.Email });
+        }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginModel model)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == model.Identifier || u.Email == model.Identifier);
+            if (user == null) return Unauthorized("Invalid credentials.");
+            if (string.IsNullOrEmpty(user.PasswordHash)) return Unauthorized("Invalid credentials.");
+            if (!BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash)) return Unauthorized("Invalid credentials.");
+
+            return Ok(new LoginResponse { UserId = user.Id, Username = user.Username ?? "", Email = user.Email, Message = "Login successful" });
+        }
+
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
+        {
+            if (model == null) return BadRequest("Invalid request.");
+            if (string.IsNullOrWhiteSpace(model.CurrentPassword) || string.IsNullOrWhiteSpace(model.NewPassword))
+                return BadRequest("Current and new password are required.");
+            if (model.NewPassword.Length < 8)
+                return BadRequest("New password must be at least 8 characters.");
+            if (model.CurrentPassword == model.NewPassword)
+                return BadRequest("New password must be different from current password.");
+
+            User? user = null;
+            if (model.UserId.HasValue)
+            {
+                user = await _context.Users.FirstOrDefaultAsync(u => u.Id == model.UserId.Value);
+            }
+            else if (!string.IsNullOrWhiteSpace(model.Identifier))
+            {
+                user = await _context.Users.FirstOrDefaultAsync(u => u.Username == model.Identifier || u.Email == model.Identifier);
+            }
+            else
+            {
+                return BadRequest("User identifier is required.");
+            }
+
+            if (user == null) return NotFound("User not found.");
+            if (string.IsNullOrEmpty(user.PasswordHash)) return BadRequest("User does not have a password set.");
+            if (!BCrypt.Net.BCrypt.Verify(model.CurrentPassword, user.PasswordHash))
+                return Unauthorized("Current password is incorrect.");
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { Message = "Password updated successfully." });
+        }
+    }
+}

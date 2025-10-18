@@ -29,7 +29,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Point>> PostPoint(PointCreateDto dto)
+        public async Task<ActionResult<object>> PostPoint(PointCreateDto dto)
         {
             var point = new Point
             {
@@ -38,19 +38,19 @@ namespace WebApi.Controllers
             };
             _context.Points.Add(point);
             await _context.SaveChangesAsync();
-            // Devuelve solo los datos simples, no la entidad completa para evitar ciclos
-            return CreatedAtAction(nameof(GetPoint), new { id = point.Id }, new {
-                id = point.Id,
-                description = point.Description,
-                projectId = point.ProjectId
-            });
+            return CreatedAtAction(nameof(GetPoint), new { id = point.Id }, new { id = point.Id, description = point.Description, projectId = point.ProjectId });
         }
 
+        // Actualiza por id de la ruta; no se requiere Id en el cuerpo
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPoint(int id, Point point)
+        public async Task<IActionResult> PutPoint(int id, PointCreateDto dto)
         {
-            if (id != point.Id) return BadRequest();
-            _context.Entry(point).State = EntityState.Modified;
+            var point = await _context.Points.FindAsync(id);
+            if (point == null) return NotFound();
+
+            point.Description = dto.Description;
+            point.ProjectId = dto.ProjectId;
+
             await _context.SaveChangesAsync();
             return NoContent();
         }

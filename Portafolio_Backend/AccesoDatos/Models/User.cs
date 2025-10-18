@@ -43,6 +43,11 @@ namespace AccesoDatos.Models
         public string Name { get; set; } // Obligatorio
         public string Email { get; set; } // Obligatorio
         public string Phone { get; set; } // Obligatorio
+
+        // Authentication fields
+        public string? Username { get; set; }
+        public string? PasswordHash { get; set; }
+
         public string? Bio { get; set; }
         public string[]? ShortDescriptions { get; set; }
         public string? GeneralDescription { get; set; }

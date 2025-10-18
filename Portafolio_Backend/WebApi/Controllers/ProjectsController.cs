@@ -92,51 +92,34 @@ namespace WebApi.Controllers
             return project;
         }
 
-        // Nuevo endpoint para subir imagen de proyecto y crear proyecto
+        // Crear proyecto con imagen principal obligatoria
         [HttpPost("with-image")]
-        public async Task<ActionResult<ProjectResponseModel>> PostProjectWithImage([FromForm] ProjectFormModel model)
+        public async Task<ActionResult<ProjectResponseModel>> PostProjectWithImage([FromForm] CreateProjectFormModel model)
         {
-            string imagePath = null;
-            if (model.Image != null && model.Image.Length > 0)
-            {
-                var imagesFolder = Path.Combine(_env.WebRootPath, "images");
-                Directory.CreateDirectory(imagesFolder);
-                var fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
-                var filePath = Path.Combine(imagesFolder, fileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await model.Image.CopyToAsync(stream);
-                }
-                imagePath = $"images/{fileName}";
-            }
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            var project = new Project {
+            var imagePath = await SaveImageAsync(model.Image);
+
+            var project = new Project
+            {
                 Title = model.Title,
                 Description = model.Description,
                 Technologies = model.Technologies,
-                ProjectUrl = model.ProjectUrl,
+                ProjectUrl = NormalizeUrl(model.ProjectUrl),
                 UserId = model.UserId,
                 ImageUrl = imagePath,
-                IsFeatured = model.IsFeatured, // Nuevo campo
+                IsFeatured = model.IsFeatured,
                 Images = new List<ProjectImage>()
             };
 
-            // Guardar imágenes adicionales
+            // Guardar imágenes adicionales (append)
             if (model.Images != null)
             {
                 foreach (var img in model.Images)
                 {
                     if (img != null && img.Length > 0)
                     {
-                        var imagesFolder = Path.Combine(_env.WebRootPath, "images");
-                        Directory.CreateDirectory(imagesFolder);
-                        var fileName = Guid.NewGuid() + Path.GetExtension(img.FileName);
-                        var filePath = Path.Combine(imagesFolder, fileName);
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await img.CopyToAsync(stream);
-                        }
-                        var url = $"images/{fileName}";
+                        var url = await SaveImageAsync(img);
                         project.Images.Add(new ProjectImage { Url = url });
                     }
                 }
@@ -145,8 +128,8 @@ namespace WebApi.Controllers
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
 
-            // Devuelve solo el modelo de respuesta para evitar ciclos
-            var response = new ProjectResponseModel {
+            var response = new ProjectResponseModel
+            {
                 Id = project.Id,
                 Title = project.Title,
                 Description = project.Description,
@@ -155,7 +138,7 @@ namespace WebApi.Controllers
                 UserId = project.UserId,
                 ImageUrl = project.ImageUrl,
                 ImageUrls = project.Images.Select(img => img.Url).ToList(),
-                User = null // Puedes incluir el usuario si lo necesitas
+                User = null
             };
             return CreatedAtAction(nameof(GetProject), new { id = project.Id }, response);
         }
@@ -165,7 +148,8 @@ namespace WebApi.Controllers
         {
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
-            var response = new ProjectResponseModel {
+            var response = new ProjectResponseModel
+            {
                 Id = project.Id,
                 Title = project.Title,
                 Description = project.Description,
@@ -188,51 +172,56 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
+        // Actualizar proyecto sin exigir imagen; aceptar ImageUrl y borrado selectivo
         [HttpPut("{id}/with-image")]
-        public async Task<IActionResult> PutProjectWithImage(int id, [FromForm] ProjectFormModel model)
+        public async Task<IActionResult> PutProjectWithImage(int id, [FromForm] UpdateProjectFormModel model)
         {
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+
             var project = await _context.Projects.Include(p => p.Images).FirstOrDefaultAsync(p => p.Id == id);
             if (project == null) return NotFound();
 
             project.Title = model.Title;
             project.Description = model.Description;
-            project.Technologies = model.Technologies;
-            project.ProjectUrl = model.ProjectUrl;
+            if (model.Technologies != null)
+                project.Technologies = model.Technologies;
+            project.ProjectUrl = NormalizeUrl(model.ProjectUrl);
             project.UserId = model.UserId;
-            project.IsFeatured = model.IsFeatured; // Nuevo campo
+            project.IsFeatured = model.IsFeatured;
 
-            // Actualizar imagen principal
+            // Imagen principal
             if (model.Image != null && model.Image.Length > 0)
             {
-                var imagesFolder = Path.Combine(_env.WebRootPath, "images");
-                Directory.CreateDirectory(imagesFolder);
-                var fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
-                var filePath = Path.Combine(imagesFolder, fileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                var newUrl = await SaveImageAsync(model.Image);
+                project.ImageUrl = newUrl;
+            }
+            else if (!string.IsNullOrWhiteSpace(model.ImageUrl))
+            {
+                project.ImageUrl = model.ImageUrl;
+            }
+            // si no viene nada, se mantiene
+
+            // Borrado selectivo de adicionales
+            if (model.RemoveImageUrls != null && model.RemoveImageUrls.Length > 0)
+            {
+                var toRemove = project.Images
+                    .Where(pi => model.RemoveImageUrls.Contains(pi.Url, StringComparer.OrdinalIgnoreCase))
+                    .ToList();
+                if (toRemove.Count > 0)
                 {
-                    await model.Image.CopyToAsync(stream);
+                    _context.ProjectImages.RemoveRange(toRemove);
                 }
-                project.ImageUrl = $"images/{fileName}";
             }
 
-            // Actualizar imágenes adicionales
-            if (model.Images != null && model.Images.Count > 0)
+            // Append nuevas adicionales
+            if (model.Images != null)
             {
-                project.Images.Clear();
                 foreach (var img in model.Images)
                 {
                     if (img != null && img.Length > 0)
                     {
-                        var imagesFolder = Path.Combine(_env.WebRootPath, "images");
-                        Directory.CreateDirectory(imagesFolder);
-                        var fileName = Guid.NewGuid() + Path.GetExtension(img.FileName);
-                        var filePath = Path.Combine(imagesFolder, fileName);
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await img.CopyToAsync(stream);
-                        }
-                        var url = $"images/{fileName}";
-                        project.Images.Add(new ProjectImage { Url = url });
+                        var url = await SaveImageAsync(img);
+                        project.Images.Add(new ProjectImage { Url = url, ProjectId = project.Id });
                     }
                 }
             }
@@ -244,11 +233,55 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProject(int id)
         {
-            var project = await _context.Projects.FindAsync(id);
+            var project = await _context.Projects
+                .Include(p => p.Images)
+                .FirstOrDefaultAsync(p => p.Id == id);
             if (project == null) return NotFound();
+
+            // Borrar archivos físicos (si existen)
+            void DeleteFileIfExists(string? relativePath)
+            {
+                if (string.IsNullOrWhiteSpace(relativePath)) return;
+                var root = _env.WebRootPath ?? "wwwroot";
+                var fullPath = Path.Combine(root, relativePath.Replace('/', Path.DirectorySeparatorChar));
+                if (System.IO.File.Exists(fullPath))
+                {
+                    try { System.IO.File.Delete(fullPath); } catch { /* ignorar errores de IO */ }
+                }
+            }
+
+            DeleteFileIfExists(project.ImageUrl);
+            foreach (var img in project.Images)
+                DeleteFileIfExists(img.Url);
+
             _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return NoContent();
+        }
+        
+        // Helpers
+        private async Task<string> SaveImageAsync(IFormFile file)
+        {
+            var imagesFolder = Path.Combine(_env.WebRootPath ?? "wwwroot", "images");
+            Directory.CreateDirectory(imagesFolder);
+            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+            var filePath = Path.Combine(imagesFolder, fileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+            return $"images/{fileName}";
+        }
+
+        private static string? NormalizeUrl(string? input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return null;
+            if (Uri.TryCreate(input, UriKind.Absolute, out var uri) &&
+                (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps))
+            {
+                return uri.ToString();
+            }
+            return input; // ya validado por el modelo si no es http/https
         }
     }
 }

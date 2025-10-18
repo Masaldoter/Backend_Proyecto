@@ -17,12 +17,12 @@ namespace WebApi.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ContactMessage>>> GetContactMessages()
-            => await _context.ContactMessages.ToListAsync();
+            => await _context.ContactMessages.Include(cm => cm.User).ToListAsync();
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ContactMessage>> GetContactMessage(int id)
         {
-            var message = await _context.ContactMessages.FindAsync(id);
+            var message = await _context.ContactMessages.Include(cm => cm.User).FirstOrDefaultAsync(cm => cm.Id == id);
             if (message == null) return NotFound();
             return message;
         }
@@ -30,9 +30,28 @@ namespace WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<ContactMessage>> PostContactMessage(ContactMessage message)
         {
+            // SentAt always set by server
             message.SentAt = DateTime.UtcNow;
+
+            // If a UserId (recipient) is provided, ensure it exists (optional)
+            if (message.UserId.HasValue)
+            {
+                var userExists = await _context.Users.AnyAsync(u => u.Id == message.UserId.Value);
+                if (!userExists)
+                {
+                    return BadRequest($"User with id {message.UserId.Value} does not exist.");
+                }
+            }
+
             _context.ContactMessages.Add(message);
             await _context.SaveChangesAsync();
+
+            // Load recipient user for response
+            if (message.UserId.HasValue)
+            {
+                await _context.Entry(message).Reference(m => m.User).LoadAsync();
+            }
+
             return CreatedAtAction(nameof(GetContactMessage), new { id = message.Id }, message);
         }
 
